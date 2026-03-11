@@ -36,10 +36,10 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
+        // 'web' => [
+        //     'driver' => 'session',
+        //     'provider' => 'users',
+        // ],
         'user' => [
             'driver' => 'sanctum',
             'provider' => 'users',
@@ -47,6 +47,24 @@ return [
         'api' => [
             'driver' => 'sanctum',
             'provider' => 'users',
+        ],
+        'shop-admin' => [
+            'driver' => 'sanctum',
+            'provider' => 'shop_admins',
+        ],
+
+        'agent' => [
+            'driver' => 'sanctum',
+            'provider' => 'agents',
+        ],
+
+        'delivery-boy' => [
+            'driver' => 'sanctum',
+            'provider' => 'delivery_boys',
+        ],
+        'customer' => [
+            'driver' => 'sanctum',
+            'provider' => 'customers',
         ],
     ],
 
@@ -71,6 +89,24 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'shop_admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\ShopAdmin::class,
+        ],
+
+        'agents' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Agent::class,
+        ],
+
+        'delivery_boys' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\DeliveryBoy::class,
+        ],
+        'customers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Customer::class,
         ],
         // 'users' => [
         //     'driver' => 'database',

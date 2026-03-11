@@ -19,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // dd(config('auth.guards'));
+
         // $settings = $settings = Setting::allCached();
         // View::share('settings', $settings);
         \Illuminate\Pagination\Paginator::useBootstrapFive();

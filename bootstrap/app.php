@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\MultiAuth;
 use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -22,6 +23,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->alias([
             'verified' => EnsureEmailIsVerified::class,
+            'multi-auth' => MultiAuth::class,
             // ✅ Spatie permission middleware
             'role' => RoleMiddleware::class,
             'permission' => PermissionMiddleware::class,
