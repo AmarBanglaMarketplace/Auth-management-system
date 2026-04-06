@@ -153,7 +153,12 @@ class ShopAdminAuthenticationController extends Controller
         // If using Sanctum personal access tokens: 
         $user = Auth::guard('shop-admin')->user();
         if ($user) {
-            return ApiResponse::success('Validation successful', 200, ['valid' => true, 'user_id' => $user->id]);
+            return ApiResponse::success('Validation successful', 200, [
+                'valid' => true,
+                'user_id' => $user->id,
+                'roles' => $user->getRoleNames(),
+                'permissions' => $user->getAllPermissions()->pluck('name')
+            ]);
         }
         return ApiResponse::error('Invalid token', 401, ['valid' => false]);
     }

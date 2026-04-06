@@ -14,10 +14,11 @@ class AgentSeeder extends Seeder
      */
     public function run(): void
     {
-        Agent::create([
+        $agent = Agent::create([
             'name' => 'Default Agent',
             'email' => 'agent@gmail.com',
             'password' => Hash::make('12345678'),
         ]);
+        $agent->assignRole('agent');
     }
 }

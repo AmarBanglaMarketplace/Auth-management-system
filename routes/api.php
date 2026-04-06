@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\Auth\CustomerAuthenticationController;
 use App\Http\Controllers\Api\Auth\DeliveryBoyAuthenticationController;
 use App\Http\Controllers\Api\Auth\ShopAdminAuthenticationController;
 use App\Http\Controllers\Api\Auth\SuperAdminAuthenticationController;
+use App\Http\Controllers\Api\SuperAdmin\RolePermissionController;
 use Illuminate\Support\Facades\Route;
 
 // Super Admin
@@ -12,6 +13,26 @@ Route::prefix('admins')->controller(SuperAdminAuthenticationController::class)->
     Route::post('login', 'login');
     Route::post('validate-token', 'validateToken');
     Route::post('logout', 'logout')->middleware('auth:user');
+    Route::middleware(['auth:user', 'role:super-admin'])->controller(RolePermissionController::class)->group(function () {
+        // 🔹 Role management
+        Route::post('/roles', 'createRole');                                       // Create a new role
+        Route::get('/roles', 'getRolesByGuard');                                  // Get all roles by guard_name
+        Route::get('/get-roles', 'getRoles');                                    // Get all roles by guard_name
+        Route::delete('/roles/{role}', 'deleteRole');
+        Route::get('/roles/{role}/permissions', 'getPermissionsByRole');       // Get all permissions for a role
+
+        // 🔹 Permission management
+        Route::get('/permissions', 'getPermissions');                     // Create a new permission
+        Route::post('/permissions', 'createPermission');                     // Create a new permission
+        Route::delete('/permissions/{permission}', 'deletePermission');
+        Route::post('/roles/{role}/permission', 'assignPermissionToRole'); // Assign permissions to a role
+        Route::put('/roles/{role}/permissions', 'syncPermissionsForRole');
+        Route::delete('/roles/{role}/permissions', 'removePermissionFromRole');
+
+        // 🔹 User management
+        Route::post('/users/{userId}/roles', 'assignRoleToUser');
+        Route::delete('/users/{userId}/roles', 'removeRoleFromUser');
+    });
 });
 
 // Shop Admin

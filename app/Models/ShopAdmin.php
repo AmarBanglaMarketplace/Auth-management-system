@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
-class ShopAdmin extends Model
+class ShopAdmin extends Authenticatable
 {
-     use HasApiTokens, Notifiable;
-
+    use HasApiTokens, HasRoles, Notifiable;
+    protected $guard_name = 'shop-admin';
     protected $fillable = [
         'name',
         'email',

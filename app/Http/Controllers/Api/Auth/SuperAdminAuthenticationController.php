@@ -114,27 +114,32 @@ class SuperAdminAuthenticationController extends Controller
         // If using Sanctum personal access tokens: 
         $user = Auth::guard('sanctum')->user();
         if ($user) {
-            return ApiResponse::success('Validation successful', 200, ['valid' => true, 'user_id' => $user->id]);
+            return ApiResponse::success('Validation successful', 200, [
+                'valid' => true,
+                'user_id' => $user->id,
+                'roles' => $user->getRoleNames(),
+                'permissions' => $user->getAllPermissions()->pluck('name')
+            ]);
         }
         return ApiResponse::error('Invalid token', 401, ['valid' => false]);
     }
 
-   /**
- * Log out the authenticated Super Admin by revoking all issued tokens.
- *
- * This endpoint deletes all active Sanctum tokens for the current Super Admin,
- * effectively invalidating any existing sessions. A successful response
- * confirms that the Super Admin has been logged out and must re‑authenticate
- * to access protected endpoints again.
- *
- * @group Authentication
- * @authenticated
- *
- * @header Authorization Bearer <token>
- *
- * @param \Illuminate\Http\Request $request
- * @return \Illuminate\Http\JsonResponse
- */
+    /**
+     * Log out the authenticated Super Admin by revoking all issued tokens.
+     *
+     * This endpoint deletes all active Sanctum tokens for the current Super Admin,
+     * effectively invalidating any existing sessions. A successful response
+     * confirms that the Super Admin has been logged out and must re‑authenticate
+     * to access protected endpoints again.
+     *
+     * @group Authentication
+     * @authenticated
+     *
+     * @header Authorization Bearer <token>
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
 
     public function logout(Request $request)
     {

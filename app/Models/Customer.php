@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
-class Customer extends Model
+class Customer extends Authenticatable
 {
-    use HasApiTokens, Notifiable;
-
+    use HasApiTokens, HasRoles, Notifiable;
+    protected $guard_name = 'customer';
     protected $fillable = [
         'name',
         'email',

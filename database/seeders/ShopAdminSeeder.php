@@ -14,10 +14,12 @@ class ShopAdminSeeder extends Seeder
      */
     public function run(): void
     {
-        ShopAdmin::create([
+        $shopAdmin = ShopAdmin::create([
             'name' => 'Main Shop Admin',
             'email' => 'shopadmin@gmail.com',
             'password' => Hash::make('12345678'),
         ]);
+
+        $shopAdmin->assignRole('shop-admin');
     }
 }

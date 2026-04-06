@@ -16,6 +16,7 @@ Route::get('/clear', function () {
 
     return "Application cache cleared!";
 });
+
 Route::get('/', function () {
     return 'Welcome to auth manager';
 });

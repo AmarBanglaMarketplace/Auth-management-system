@@ -14,10 +14,12 @@ class DeliveryBoySeeder extends Seeder
      */
     public function run(): void
     {
-        DeliveryBoy::create([
+        $deviveryBoy = DeliveryBoy::create([
             'name' => 'Default Delivery Boy',
             'email' => 'delivery@gmail.com',
             'password' => Hash::make('12345678'),
         ]);
+
+        $deviveryBoy->assignRole('delivery-boy');
     }
 }
