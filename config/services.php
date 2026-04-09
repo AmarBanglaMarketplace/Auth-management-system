@@ -37,5 +37,9 @@ return [
     'use_recaptcha' => env('USE_RECAPTCHA', false),
     'sitekey'       => env('NOCAPTCHA_SITEKEY', ''),
     'secret'        => env('NOCAPTCHA_SECRET', ''),
-
+    'bulksms' => [
+        'api_url'   => env('BULKSMS_API_URL'),
+        'api_key'   => env('BULKSMS_API_KEY'),
+        'sender_id' => env('BULKSMS_SENDER_ID'),
+    ],
 ];

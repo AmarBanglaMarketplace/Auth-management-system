@@ -17,6 +17,7 @@ class DeliveryBoySeeder extends Seeder
         $deviveryBoy = DeliveryBoy::create([
             'name' => 'Default Delivery Boy',
             'email' => 'delivery@gmail.com',
+            'phone' => '01800000011',
             'password' => Hash::make('12345678'),
         ]);
 

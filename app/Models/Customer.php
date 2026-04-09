@@ -19,6 +19,6 @@ class Customer extends Authenticatable
 
     protected $hidden = [
         'password',
-        'remember_token',
+        'token_expiry',
     ];
 }

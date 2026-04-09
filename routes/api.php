@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\Auth\DeliveryBoyAuthenticationController;
 use App\Http\Controllers\Api\Auth\ShopAdminAuthenticationController;
 use App\Http\Controllers\Api\Auth\SuperAdminAuthenticationController;
 use App\Http\Controllers\Api\SuperAdmin\RolePermissionController;
+use App\Http\Controllers\SuperAdmin\SuperAdminUserManagementController;
 use Illuminate\Support\Facades\Route;
 
 // Super Admin
@@ -13,6 +14,8 @@ Route::prefix('admins')->controller(SuperAdminAuthenticationController::class)->
     Route::post('login', 'login');
     Route::post('validate-token', 'validateToken');
     Route::post('logout', 'logout')->middleware('auth:user');
+    Route::post('update-password', 'updatePassword')->middleware('auth:user');
+
     Route::middleware(['auth:user', 'role:super-admin'])->controller(RolePermissionController::class)->group(function () {
         // 🔹 Role management
         Route::post('/roles', 'createRole');                                       // Create a new role
@@ -33,6 +36,14 @@ Route::prefix('admins')->controller(SuperAdminAuthenticationController::class)->
         Route::post('/users/{userId}/roles', 'assignRoleToUser');
         Route::delete('/users/{userId}/roles', 'removeRoleFromUser');
     });
+
+    Route::middleware(['auth:user', 'role:super-admin'])->controller(SuperAdminUserManagementController::class)->group(function () {
+        // manage shop admin
+        Route::post('shop-admin/{user}/update-password', 'updateShopAdminPassword');
+        Route::post('agent/{user}/update-password', 'updateAgentPassword');
+        Route::post('delivery-boy/{user}/update-password', 'updateDeliveryBoyPassword');
+        Route::post('customer/{user}/update-password', 'updateCustomerPassword');
+    });
 });
 
 // Shop Admin
@@ -41,6 +52,7 @@ Route::prefix('shop-admins')->controller(ShopAdminAuthenticationController::clas
     Route::post('login', 'login');
     Route::post('validate-token', 'validateToken');
     Route::post('logout', 'logout')->middleware('auth:shop-admin');
+    Route::post('update-password', 'updatePassword')->middleware('auth:shop-admin');
 });
 
 // Agent
@@ -49,6 +61,7 @@ Route::prefix('agents')->controller(AgentAuthenticationController::class)->group
     Route::post('login', 'login');
     Route::post('validate-token', 'validateToken');
     Route::post('logout', 'logout')->middleware('auth:agent');
+    Route::post('update-password', 'updatePassword')->middleware('auth:agent');
 });
 
 // Delivery Boy
@@ -56,7 +69,10 @@ Route::prefix('delivery-boys')->controller(DeliveryBoyAuthenticationController::
     Route::post('register', 'register')->middleware(['multi-auth:shop-admin']); //create shop admin
     Route::post('login', 'login');
     Route::post('validate-token', 'validateToken');
+    Route::post('send-otp', 'sendOtp')->middleware('throttle:1,5');
+    Route::post('reset-password', 'validateOtpAndResetPassword');
     Route::post('logout', 'logout')->middleware('auth:delivery-boy');
+    Route::post('update-password', 'updatePassword')->middleware('auth:delivery-boy');
 });
 
 // Customer
@@ -64,5 +80,8 @@ Route::prefix('customers')->controller(CustomerAuthenticationController::class)-
     Route::post('register', 'register'); //public
     Route::post('login', 'login');
     Route::post('validate-token', 'validateToken');
+    Route::post('send-otp', 'sendOtp')->middleware('throttle:1,5');
+    Route::post('reset-password', 'validateOtpAndResetPassword');
     Route::post('logout', 'logout')->middleware('auth:customer');
+    Route::post('update-password', 'updatePassword')->middleware('auth:customer');
 });

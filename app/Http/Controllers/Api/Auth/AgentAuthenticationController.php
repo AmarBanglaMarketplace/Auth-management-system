@@ -107,6 +107,36 @@ class AgentAuthenticationController extends Controller
         return ApiResponse::success('Login successful', 200, ['user' => $admin, 'token' => $token]);
     }
     /**
+     * Update the authenticated Agent's password.
+     *
+     * Validates the current password, ensures the new password meets
+     * security requirements, and updates the stored hash. Requires
+     * authentication and CSRF protection.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|min:8|confirmed',
+        ]);
+
+        $user = $request->user();
+
+        if (!Hash::check($request->current_password, $user->password)) {
+            return ApiResponse::error('Current password is incorrect', 401);
+        }
+
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+
+        return ApiResponse::success('Password updated successfully', 200);
+    }
+    /**
      * Validate the bearer token
      *
      * This endpoint checks if a valid Sanctum personal access token
