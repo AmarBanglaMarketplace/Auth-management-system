@@ -11,11 +11,7 @@ class Customer extends Authenticatable
 {
     use HasApiTokens, HasRoles, Notifiable;
     protected $guard_name = 'customer';
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded=['id'];
 
     protected $hidden = [
         'password',

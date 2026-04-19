@@ -2,20 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-class DeliveryBoy extends Authenticatable
+class Seller extends Model
 {
     use HasApiTokens, HasRoles, Notifiable;
-    protected $guard_name = 'delivery-boy';
+    
+    protected $table = 'seller';
+    protected $guard_name = 'seller';
     protected $guarded = ['id'];
-
 
     protected $hidden = [
         'password',
-        'remember_token',
+        'token_expiry',
     ];
 }

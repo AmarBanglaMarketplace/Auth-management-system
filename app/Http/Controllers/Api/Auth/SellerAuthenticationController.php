@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\Auth;
 
 use App\Helpers\ApiResponse;
 use App\Http\Controllers\Controller;
-use App\Models\DeliveryBoy;
+use App\Models\Seller;
 use App\Services\SmsService;
 use Exception;
 use Illuminate\Http\Request;
@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 
-class DeliveryBoyAuthenticationController extends Controller
+class SellerAuthenticationController extends Controller
 {
     /**
-     * Register a new Delivery Boy.
+     * Register a new Seller.
      *
      * This endpoint validates the incoming request data, creates a new
      * Agent record, and issues a Sanctum personal access token for API
@@ -75,25 +75,25 @@ class DeliveryBoyAuthenticationController extends Controller
                 'required',
                 'string',
                 'regex:/^[0-9]{10,15}$/',
-                'unique:delivery_boys,phone'
+                'unique:seller,phone'
             ],
             'password' => 'required|min:6|confirmed',
         ]);
 
         // Create user
-        $user = DeliveryBoy::create([
+        $user = Seller::create([
             'name'     => $request->name,
             'phone'    => $request->phone,
             'password' => Hash::make($request->password),
         ]);
 
         // Issue token
-        $token = $user->createToken('delivery_boys-token', ['*'])->plainTextToken;
+        $token = $user->createToken('seller-token', ['*'])->plainTextToken;
 
         return ApiResponse::success('Registration successful', 201, ['user' => $user, 'token' => $token]);
     }
     /**
-     * Login Delivery Boy.
+     * Login Seller.
      *
      * Revokes all existing tokens before issuing a new one.
      *
@@ -108,18 +108,18 @@ class DeliveryBoyAuthenticationController extends Controller
             'string',
             'regex:/^[0-9]{10,15}$/',
         ], 'password' => 'required']);
-        $admin = DeliveryBoy::where('phone', $request->phone)->first();
+        $admin = Seller::where('phone', $request->phone)->first();
         if (!$admin || !Hash::check($request->password, $admin->password)) {
             return ApiResponse::error('Invalid credentials', 401);
         }
 
         $admin->tokens()->delete(); // --- IGNORE ---
 
-        $token = $admin->createToken('delivery_boys-token', ['*'])->plainTextToken;
+        $token = $admin->createToken('seller-token', ['*'])->plainTextToken;
         return ApiResponse::success('Login successful', 200, ['user' => $admin, 'token' => $token]);
     }
     /**
-     * Update the authenticated Delivery Boy's password.
+     * Update the authenticated Seller's password.
      *
      * Validates the current password, ensures the new password meets
      * security requirements, and updates the stored hash. Requires
@@ -195,7 +195,7 @@ class DeliveryBoyAuthenticationController extends Controller
             return ApiResponse::error('Token missing', 401, ['valid' => false]);
         }
         // If using Sanctum personal access tokens: 
-        $user = Auth::guard('delivery-boy')->user();
+        $user = Auth::guard('seller')->user();
         if ($user) {
             return ApiResponse::success('Validation successful', 200, [
                 'valid' => true,
@@ -207,11 +207,11 @@ class DeliveryBoyAuthenticationController extends Controller
         return ApiResponse::error('Invalid token', 401, ['valid' => false]);
     }
     /**
-     * Log out the authenticated Delivery Boy by revoking all issued tokens.
+     * Log out the authenticated Seller by revoking all issued tokens.
      *
-     * This endpoint deletes all active Sanctum tokens for the current Delivery Boy,
+     * This endpoint deletes all active Sanctum tokens for the current Seller,
      * effectively invalidating any existing sessions. A successful response
-     * confirms that the Delivery Boy has been logged out and must re‑authenticate
+     * confirms that the Seller has been logged out and must re‑authenticate
      * to access protected endpoints again.
      *
      * @group Authentication
@@ -228,13 +228,13 @@ class DeliveryBoyAuthenticationController extends Controller
         return ApiResponse::success('Logged out successful', 200);
     }
     /**
-     *Reset Password Send OTP to a Delivery Boy's phone number.
+     *Reset Password Send OTP to a Seller's phone number.
      *
      * Validates the phone number, generates a random OTP, stores it in cache for 5 minutes,
      * sends the OTP via SMS, and logs the attempt.
      *
      * @param \Illuminate\Http\Request $request
-     *   The HTTP request containing the Delivery Boy's phone number.
+     *   The HTTP request containing the Seller's phone number.
      *
      * @return \Illuminate\Http\JsonResponse
      *   A JSON response indicating success or failure of OTP sending.
@@ -247,7 +247,7 @@ class DeliveryBoyAuthenticationController extends Controller
     public function sendOtp(Request $request)
     {
         $request->validate([
-            'phone' => 'required|string|exists:delivery_boys,phone',
+            'phone' => 'required|string|exists:seller,phone',
         ]);
         try {
 
@@ -259,15 +259,15 @@ class DeliveryBoyAuthenticationController extends Controller
             // Prepare message
             $message = "Your AmarBangla OTP is: " . $otp;
 
-            // Find deliveryBoy
-            $deliveryBoy = DeliveryBoy::where('phone', $request->phone)->first();
+            // Find Seller
+            $seller = Seller::where('phone', $request->phone)->first();
 
             // Send SMS
-            $sent = SmsService::send($message, $deliveryBoy->phone);
+            $sent = SmsService::send($message, $seller->phone);
 
             // Log OTP and SMS status
             Log::info('OTP generated', [
-                'phone' => $deliveryBoy->phone,
+                'phone' => $seller->phone,
                 'otp'   => $otp,
                 'sms_sent' => $sent,
             ]);
@@ -288,10 +288,10 @@ class DeliveryBoyAuthenticationController extends Controller
         }
     }
     /**
-     * Validate OTP and reset delivery boy's password.
+     * Validate OTP and reset Seller's password.
      *
      * Checks the provided OTP against the cached value, validates the new password,
-     * updates the delivery boy's password if OTP is correct, clears the OTP from cache,
+     * updates the Seller's password if OTP is correct, clears the OTP from cache,
      * and logs the result.
      *
      * @param \Illuminate\Http\Request $request
@@ -329,22 +329,22 @@ class DeliveryBoyAuthenticationController extends Controller
                 return ApiResponse::error('Invalid OTP', 401);
             }
 
-            // Find delivery boy
-            $deliveryBoy = DeliveryBoy::where('phone', $request->phone)->first();
+            // Find Seller
+            $Seller = Seller::where('phone', $request->phone)->first();
 
-            if (!$deliveryBoy) {
-                return ApiResponse::error('Delivery Boy not found', 404);
+            if (!$Seller) {
+                return ApiResponse::error('Seller not found', 404);
             }
 
             // Reset password
-            $deliveryBoy->password = Hash::make($request->new_password);
-            $deliveryBoy->save();
+            $Seller->password = Hash::make($request->new_password);
+            $Seller->save();
 
             // Clear OTP after successful reset
             Cache::forget('otp_' . $request->phone);
 
-            Log::info('Delivery Boy Password reset successful via OTP', [
-                'phone' => $deliveryBoy->phone,
+            Log::info('Seller Password reset successful via OTP', [
+                'phone' => $Seller->phone,
             ]);
 
             return ApiResponse::success('Password reset successfully', 200);

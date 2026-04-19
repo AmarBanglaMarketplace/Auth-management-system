@@ -48,7 +48,8 @@ class RolePermissionSeeder extends Seeder
         $agent = Role::create(['name' => 'agent', 'guard_name' => 'agent']);
         // $handleOrders = Permission::create(['name' => 'handle-orders', 'guard_name' => 'agent']);
         // $agent->givePermissionTo($handleOrders);
-
+        // Seller
+        $deliveryBoy = Role::create(['name' => 'seller', 'guard_name' => 'seller']);
         // // Delivery Boy
         $deliveryBoy = Role::create(['name' => 'delivery-boy', 'guard_name' => 'delivery-boy']);
         // $acceptDelivery = Permission::create(['name' => 'accept-delivery', 'guard_name' => 'delivery-boy']);

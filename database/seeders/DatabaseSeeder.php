@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,9 +19,10 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminSeeder::class);
         $this->call(ShopAdminSeeder::class);
         $this->call(DeliveryBoySeeder::class);
+        $this->call(SellerSeeder::class);
         $this->call(AgentSeeder::class);
         $this->call(CustomerSeeder::class);
 
-        // Artisan::call("optimize:clear");
+        Artisan::call("optimize:clear");
     }
 }

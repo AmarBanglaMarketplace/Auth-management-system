@@ -3847,6 +3847,314 @@
               ]
             },
             {
+              "name": "Seller",
+              "item": [
+                {
+                  "name": "update-password",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "new_password",
+                          "value": "12345678",
+                          "type": "text",
+                          "uuid": "4cd1c61c-808d-445f-832f-1d9b7b4e0123"
+                        },
+                        {
+                          "key": "new_password_confirmation",
+                          "value": "12345678",
+                          "type": "text",
+                          "uuid": "ae0c5ad6-6ec2-457d-855b-98197446a73a"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{auth_api}}admins/seller/1/update-password",
+                      "host": [
+                        "{{auth_api}}admins"
+                      ],
+                      "path": [
+                        "seller",
+                        "1",
+                        "update-password"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "unauthnticated",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json",
+                            "type": "text"
+                          }
+                        ],
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": [
+                            {
+                              "key": "new_password",
+                              "value": "12345678",
+                              "type": "text",
+                              "uuid": "4cd1c61c-808d-445f-832f-1d9b7b4e0123",
+                              "disabled": true
+                            },
+                            {
+                              "key": "new_password_confirmation",
+                              "value": "12345678",
+                              "type": "text",
+                              "uuid": "ae0c5ad6-6ec2-457d-855b-98197446a73a"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{auth_api}}admins/seller/1/update-password",
+                          "host": [
+                            "{{auth_api}}admins"
+                          ],
+                          "path": [
+                            "seller",
+                            "1",
+                            "update-password"
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "",
+                      "header": [
+                        {
+                          "key": "Host",
+                          "value": "127.0.0.1:8001"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "close"
+                        },
+                        {
+                          "key": "X-Powered-By",
+                          "value": "PHP/8.2.12"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-cache, private"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Sun, 19 Apr 2026 10:19:18 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Access-Control-Allow-Origin",
+                          "value": "http://127.0.0.1:5501"
+                        },
+                        {
+                          "key": "Access-Control-Allow-Credentials",
+                          "value": "true"
+                        }
+                      ],
+                      "cookie": [
+                        {
+                          "expires": "Invalid Date",
+                          "domain": "",
+                          "path": ""
+                        }
+                      ],
+                      "body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+                    },
+                    {
+                      "name": "validation error",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json",
+                            "type": "text"
+                          }
+                        ],
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": [
+                            {
+                              "key": "new_password",
+                              "value": "12345678",
+                              "type": "text",
+                              "uuid": "4cd1c61c-808d-445f-832f-1d9b7b4e0123",
+                              "disabled": true
+                            },
+                            {
+                              "key": "new_password_confirmation",
+                              "value": "12345678",
+                              "type": "text",
+                              "uuid": "ae0c5ad6-6ec2-457d-855b-98197446a73a"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{auth_api}}admins/seller/1/update-password",
+                          "host": [
+                            "{{auth_api}}admins"
+                          ],
+                          "path": [
+                            "seller",
+                            "1",
+                            "update-password"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Content",
+                      "code": 422,
+                      "_postman_previewlanguage": "",
+                      "header": [
+                        {
+                          "key": "Host",
+                          "value": "127.0.0.1:8001"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "close"
+                        },
+                        {
+                          "key": "X-Powered-By",
+                          "value": "PHP/8.2.12"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-cache, private"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Sun, 19 Apr 2026 10:20:36 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Access-Control-Allow-Origin",
+                          "value": "http://127.0.0.1:5501"
+                        },
+                        {
+                          "key": "Access-Control-Allow-Credentials",
+                          "value": "true"
+                        }
+                      ],
+                      "cookie": [
+                        {
+                          "expires": "Invalid Date",
+                          "domain": "",
+                          "path": ""
+                        }
+                      ],
+                      "body": "{\n    \"message\": \"The new password field is required.\",\n    \"errors\": {\n        \"new_password\": [\n            \"The new password field is required.\"\n        ]\n    }\n}"
+                    },
+                    {
+                      "name": "success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json",
+                            "type": "text"
+                          }
+                        ],
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": [
+                            {
+                              "key": "new_password",
+                              "value": "12345678",
+                              "type": "text",
+                              "uuid": "4cd1c61c-808d-445f-832f-1d9b7b4e0123"
+                            },
+                            {
+                              "key": "new_password_confirmation",
+                              "value": "12345678",
+                              "type": "text",
+                              "uuid": "ae0c5ad6-6ec2-457d-855b-98197446a73a"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{auth_api}}admins/seller/1/update-password",
+                          "host": [
+                            "{{auth_api}}admins"
+                          ],
+                          "path": [
+                            "seller",
+                            "1",
+                            "update-password"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "",
+                      "header": [
+                        {
+                          "key": "Host",
+                          "value": "127.0.0.1:8001"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "close"
+                        },
+                        {
+                          "key": "X-Powered-By",
+                          "value": "PHP/8.2.12"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-cache, private"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Sun, 19 Apr 2026 10:21:02 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Access-Control-Allow-Origin",
+                          "value": "http://127.0.0.1:5501"
+                        },
+                        {
+                          "key": "Access-Control-Allow-Credentials",
+                          "value": "true"
+                        }
+                      ],
+                      "cookie": [
+                        {
+                          "expires": "Invalid Date",
+                          "domain": "",
+                          "path": ""
+                        }
+                      ],
+                      "body": "{\n    \"success\": true,\n    \"message\": \"Seller password updated successfully\",\n    \"data\": []\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "name": "Customer",
               "item": [
                 {
@@ -4062,7 +4370,7 @@
         "bearer": [
           {
             "key": "token",
-            "value": "2|tFOQbLhpCXaw4WRf7oJeBA21rBdmjVFU0hDlnwk66f920328",
+            "value": "5|raivTXcEciF7ROchnLksA1tMwUbb3EudqCFnOo017e17bfa4",
             "type": "string"
           }
         ]
@@ -5509,7 +5817,7 @@
                 },
                 {
                   "key": "password",
-                  "value": "123456780",
+                  "value": "12345678",
                   "type": "text",
                   "uuid": "7aad1182-d4b3-4015-8c5c-c280d3cb2c77"
                 }
@@ -6862,14 +7170,14 @@
               "mode": "formdata",
               "formdata": [
                 {
-                  "key": "email",
-                  "value": "delivery@gmail.com",
+                  "key": "phone",
+                  "value": "01800000011",
                   "type": "text",
                   "uuid": "c1cb8667-d1e8-4fa4-9a78-ec1697983eea"
                 },
                 {
                   "key": "password",
-                  "value": "123456789",
+                  "value": "12345678",
                   "type": "text",
                   "uuid": "e2fbe058-62f3-46f6-b039-6c546a13d4ab"
                 }
@@ -8712,6 +9020,1977 @@
           {
             "key": "token",
             "value": "11|sDvegT3asTaQMj35US5dzwPYZpd7xSAejCRAZmnp395743a2",
+            "type": "string"
+          }
+        ]
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Seller Authentication",
+      "item": [
+        {
+          "name": "Login Seller",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "phone",
+                  "value": "01800000021",
+                  "type": "text",
+                  "uuid": "c1cb8667-d1e8-4fa4-9a78-ec1697983eea"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "e2fbe058-62f3-46f6-b039-6c546a13d4ab"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{auth_api}}sellers/login",
+              "host": [
+                "{{auth_api}}sellers"
+              ],
+              "path": [
+                "login"
+              ]
+            },
+            "description": "## Purpose\n\nAuthenticate a **Delivery Boy** user and return an access token for authorized requests.\n\n---"
+          },
+          "response": [
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "email",
+                      "value": "delivery@gmail.com",
+                      "type": "text",
+                      "uuid": "c1cb8667-d1e8-4fa4-9a78-ec1697983eea"
+                    },
+                    {
+                      "key": "password",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "e2fbe058-62f3-46f6-b039-6c546a13d4ab"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boy/login",
+                  "host": [
+                    "{{auth_api}}delivery-boy"
+                  ],
+                  "path": [
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 09 Mar 2026 05:31:01 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Default Delivery Boy\",\n            \"email\": \"delivery@gmail.com\",\n            \"created_at\": \"2026-03-09T04:11:21.000000Z\",\n            \"updated_at\": \"2026-03-09T04:11:21.000000Z\"\n        },\n        \"token\": \"9|C185hUimkMpBrNWVvuibQNtFQh4K9LUIS1CuvZlq19362d1c\"\n    }\n}"
+            },
+            {
+              "name": "invalid credentials",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "email",
+                      "value": "delivery@gmail.com",
+                      "type": "text",
+                      "uuid": "c1cb8667-d1e8-4fa4-9a78-ec1697983eea"
+                    },
+                    {
+                      "key": "password",
+                      "value": "123456789",
+                      "type": "text",
+                      "uuid": "e2fbe058-62f3-46f6-b039-6c546a13d4ab"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boy/login",
+                  "host": [
+                    "{{auth_api}}delivery-boy"
+                  ],
+                  "path": [
+                    "login"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 03:13:31 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Invalid credentials\",\n    \"data\": null\n}"
+            },
+            {
+              "name": "validation error",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "email",
+                      "value": "delivery@gmail.com",
+                      "type": "text",
+                      "uuid": "c1cb8667-d1e8-4fa4-9a78-ec1697983eea"
+                    },
+                    {
+                      "key": "password",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "e2fbe058-62f3-46f6-b039-6c546a13d4ab",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boy/login",
+                  "host": [
+                    "{{auth_api}}delivery-boy"
+                  ],
+                  "path": [
+                    "login"
+                  ]
+                }
+              },
+              "status": "Unprocessable Content",
+              "code": 422,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 03:23:03 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"The password field is required.\",\n    \"errors\": {\n        \"password\": [\n            \"The password field is required.\"\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Logout Delivery Boy",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "33|0woQkdesHpcR4MpkaScWS1awScUuSvwdxbaJaga759ce49bd",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "delivery@gmail.com",
+                  "type": "text",
+                  "uuid": "c1cb8667-d1e8-4fa4-9a78-ec1697983eea"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "e2fbe058-62f3-46f6-b039-6c546a13d4ab",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{auth_api}}sellers/logout",
+              "host": [
+                "{{auth_api}}sellers"
+              ],
+              "path": [
+                "logout"
+              ]
+            },
+            "description": "## Purpose\n\nAuthenticate a **Delivery Boy** user and return an access token for authorized requests.\n\n---"
+          },
+          "response": [
+            {
+              "name": "error",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "email",
+                      "value": "delivery@gmail.com",
+                      "type": "text",
+                      "uuid": "c1cb8667-d1e8-4fa4-9a78-ec1697983eea"
+                    },
+                    {
+                      "key": "password",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "e2fbe058-62f3-46f6-b039-6c546a13d4ab",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boy/logout",
+                  "host": [
+                    "{{auth_api}}delivery-boy"
+                  ],
+                  "path": [
+                    "logout"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Mar 2026 05:51:43 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+            },
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "email",
+                      "value": "delivery@gmail.com",
+                      "type": "text",
+                      "uuid": "c1cb8667-d1e8-4fa4-9a78-ec1697983eea"
+                    },
+                    {
+                      "key": "password",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "e2fbe058-62f3-46f6-b039-6c546a13d4ab",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boy/logout",
+                  "host": [
+                    "{{auth_api}}delivery-boy"
+                  ],
+                  "path": [
+                    "logout"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 11 Mar 2026 05:52:16 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Logged out successful\",\n    \"data\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Register Seller",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Default delivery-boy",
+                  "type": "text",
+                  "uuid": "690bb6ca-33ab-4d2a-b7c6-abca43cc597f"
+                },
+                {
+                  "key": "email",
+                  "value": "test-delivery-boy@gmail.com",
+                  "type": "text",
+                  "uuid": "cede3e1a-ef2e-4986-95d3-9bf3a718cc90"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "e06a158e-eb26-4b24-a0d9-f8188f70cee0"
+                },
+                {
+                  "key": "password_confirmation",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "5c206e06-e7a7-47ab-96e2-9321a7922ace"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{auth_api}}delivery-boys/register",
+              "host": [
+                "{{auth_api}}delivery-boys"
+              ],
+              "path": [
+                "register"
+              ]
+            },
+            "description": "## Purpose\n\nRegisters a new **Shop Admin** account and returns an access token to authenticate subsequent requests.\n\n## Auth\n\n**None.** This endpoint does not require authentication."
+          },
+          "response": [
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Default delivery-boy",
+                      "type": "text",
+                      "uuid": "690bb6ca-33ab-4d2a-b7c6-abca43cc597f"
+                    },
+                    {
+                      "key": "email",
+                      "value": "test-delivery-boy@gmail.com",
+                      "type": "text",
+                      "uuid": "cede3e1a-ef2e-4986-95d3-9bf3a718cc90"
+                    },
+                    {
+                      "key": "password",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "e06a158e-eb26-4b24-a0d9-f8188f70cee0"
+                    },
+                    {
+                      "key": "password_confirmation",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "5c206e06-e7a7-47ab-96e2-9321a7922ace"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boy/register",
+                  "host": [
+                    "{{auth_api}}delivery-boy"
+                  ],
+                  "path": [
+                    "register"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 09 Mar 2026 09:28:26 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Registration successful\",\n    \"data\": {\n        \"user\": {\n            \"name\": \"Default delivery-boy\",\n            \"email\": \"test-delivery-boy@gmail.com\",\n            \"updated_at\": \"2026-03-09T09:28:26.000000Z\",\n            \"created_at\": \"2026-03-09T09:28:26.000000Z\",\n            \"id\": 4\n        },\n        \"token\": \"14|Pk5w6r0AnacDXzSdRqo99zMj1mUYxqWbZHU5QhKp14157fc6\"\n    }\n}"
+            },
+            {
+              "name": "validation error",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Default delivery-boy",
+                      "type": "text",
+                      "uuid": "690bb6ca-33ab-4d2a-b7c6-abca43cc597f"
+                    },
+                    {
+                      "key": "email",
+                      "value": "test-delivery-boy@gmail.com",
+                      "type": "text",
+                      "uuid": "cede3e1a-ef2e-4986-95d3-9bf3a718cc90"
+                    },
+                    {
+                      "key": "password",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "e06a158e-eb26-4b24-a0d9-f8188f70cee0"
+                    },
+                    {
+                      "key": "password_confirmation",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "5c206e06-e7a7-47ab-96e2-9321a7922ace"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boy/register",
+                  "host": [
+                    "{{auth_api}}delivery-boy"
+                  ],
+                  "path": [
+                    "register"
+                  ]
+                }
+              },
+              "status": "Unprocessable Content",
+              "code": 422,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 09 Mar 2026 09:28:46 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"The email has already been taken.\",\n    \"errors\": {\n        \"email\": [\n            \"The email has already been taken.\"\n        ]\n    }\n}"
+            },
+            {
+              "name": "multiple validation error",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Default delivery-boy",
+                      "type": "text",
+                      "uuid": "690bb6ca-33ab-4d2a-b7c6-abca43cc597f"
+                    },
+                    {
+                      "key": "email",
+                      "value": "test-delivery-boy@gmail.com",
+                      "type": "text",
+                      "uuid": "cede3e1a-ef2e-4986-95d3-9bf3a718cc90"
+                    },
+                    {
+                      "key": "password",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "e06a158e-eb26-4b24-a0d9-f8188f70cee0"
+                    },
+                    {
+                      "key": "password_confirmation",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "5c206e06-e7a7-47ab-96e2-9321a7922ace",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boy/register",
+                  "host": [
+                    "{{auth_api}}delivery-boy"
+                  ],
+                  "path": [
+                    "register"
+                  ]
+                }
+              },
+              "status": "Unprocessable Content",
+              "code": 422,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 09 Mar 2026 09:29:52 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"The email has already been taken. (and 1 more error)\",\n    \"errors\": {\n        \"email\": [\n            \"The email has already been taken.\"\n        ],\n        \"password\": [\n            \"The password field confirmation does not match.\"\n        ]\n    }\n}"
+            },
+            {
+              "name": "unauthorized",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Default delivery-boy",
+                      "type": "text",
+                      "uuid": "690bb6ca-33ab-4d2a-b7c6-abca43cc597f"
+                    },
+                    {
+                      "key": "email",
+                      "value": "test-delivery-boy@gmail.com",
+                      "type": "text",
+                      "uuid": "cede3e1a-ef2e-4986-95d3-9bf3a718cc90"
+                    },
+                    {
+                      "key": "password",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "e06a158e-eb26-4b24-a0d9-f8188f70cee0"
+                    },
+                    {
+                      "key": "password_confirmation",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "5c206e06-e7a7-47ab-96e2-9321a7922ace"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boy/register",
+                  "host": [
+                    "{{auth_api}}delivery-boy"
+                  ],
+                  "path": [
+                    "register"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 03:14:37 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Unauthorized\",\n    \"data\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Validate Token Seller",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{auth_api}}sellers/validate-token",
+              "host": [
+                "{{auth_api}}sellers"
+              ],
+              "path": [
+                "validate-token"
+              ]
+            },
+            "description": "## Purpose\n\nValidates the current **Bearer token** for an Delivery Boys account and confirms the token is still valid.\n\n### Authentication\n\n**Bearer Token** required.\n\nThis endpoint requires a valid access token obtained from the appropriate login API.\n\nThe token must be sent in the request header:"
+          },
+          "response": [
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{auth_api}}delivery-boy/validate-token",
+                  "host": [
+                    "{{auth_api}}delivery-boy"
+                  ],
+                  "path": [
+                    "validate-token"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 03:17:05 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Validation successful\",\n    \"data\": {\n        \"valid\": true,\n        \"user_id\": 1\n    }\n}"
+            },
+            {
+              "name": "invalid token",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{auth_api}}delivery-boy/validate-token",
+                  "host": [
+                    "{{auth_api}}delivery-boy"
+                  ],
+                  "path": [
+                    "validate-token"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 03:15:55 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Invalid token\",\n    \"data\": {\n        \"valid\": false\n    }\n}"
+            },
+            {
+              "name": "token missing",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{auth_api}}delivery-boy/validate-token",
+                  "host": [
+                    "{{auth_api}}delivery-boy"
+                  ],
+                  "path": [
+                    "validate-token"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Mar 2026 03:17:45 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Token missing\",\n    \"data\": {\n        \"valid\": false\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "current_password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "30dae24d-8a65-4258-862b-f2e7a48af59e"
+                },
+                {
+                  "key": "new_password",
+                  "value": "123456789",
+                  "type": "text",
+                  "uuid": "260a5a87-5d97-4015-b35e-c559c3c18884"
+                },
+                {
+                  "key": "new_password_confirmation",
+                  "value": "123456789",
+                  "type": "text",
+                  "uuid": "9f9722f9-5798-42ae-88a8-e6025960098f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{auth_api}}sellers/update-password",
+              "host": [
+                "{{auth_api}}sellers"
+              ],
+              "path": [
+                "update-password"
+              ]
+            },
+            "description": "## Purpose\n\nAuthenticate a **Super Admin** user and return an access token for authorized requests."
+          },
+          "response": [
+            {
+              "name": "error",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "current_password",
+                      "value": "123456789",
+                      "type": "text",
+                      "uuid": "30dae24d-8a65-4258-862b-f2e7a48af59e"
+                    },
+                    {
+                      "key": "new_password",
+                      "value": "123456789",
+                      "type": "text",
+                      "uuid": "260a5a87-5d97-4015-b35e-c559c3c18884"
+                    },
+                    {
+                      "key": "new_password_confirmation",
+                      "value": "123456789",
+                      "type": "text",
+                      "uuid": "9f9722f9-5798-42ae-88a8-e6025960098f"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boys/update-password",
+                  "host": [
+                    "{{auth_api}}delivery-boys"
+                  ],
+                  "path": [
+                    "update-password"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 08 Apr 2026 10:24:31 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+            },
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "current_password",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "30dae24d-8a65-4258-862b-f2e7a48af59e"
+                    },
+                    {
+                      "key": "new_password",
+                      "value": "123456789",
+                      "type": "text",
+                      "uuid": "260a5a87-5d97-4015-b35e-c559c3c18884"
+                    },
+                    {
+                      "key": "new_password_confirmation",
+                      "value": "123456789",
+                      "type": "text",
+                      "uuid": "9f9722f9-5798-42ae-88a8-e6025960098f"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boys/update-password",
+                  "host": [
+                    "{{auth_api}}delivery-boys"
+                  ],
+                  "path": [
+                    "update-password"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 08 Apr 2026 10:25:49 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Password updated successfully\",\n    \"data\": []\n}"
+            },
+            {
+              "name": "Update Password",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "current_password",
+                      "value": "12345678",
+                      "type": "text",
+                      "uuid": "30dae24d-8a65-4258-862b-f2e7a48af59e"
+                    },
+                    {
+                      "key": "new_password",
+                      "value": "123456789",
+                      "type": "text",
+                      "uuid": "260a5a87-5d97-4015-b35e-c559c3c18884"
+                    },
+                    {
+                      "key": "new_password_confirmation",
+                      "value": "123456789",
+                      "type": "text",
+                      "uuid": "9f9722f9-5798-42ae-88a8-e6025960098f"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}sellers/update-password",
+                  "host": [
+                    "{{auth_api}}sellers"
+                  ],
+                  "path": [
+                    "update-password"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 19 Apr 2026 10:04:23 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Password updated successfully\",\n    \"data\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "send password reset otp",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "phone",
+                  "value": "01800000011",
+                  "type": "text",
+                  "uuid": "aa128a94-d14f-4737-b97b-091a5bba0117"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{auth_api}}sellers/send-otp",
+              "host": [
+                "{{auth_api}}sellers"
+              ],
+              "path": [
+                "send-otp"
+              ]
+            },
+            "description": "## Purpose\n\nAuthenticate a **Super Admin** user and return an access token for authorized requests."
+          },
+          "response": [
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "phone",
+                      "value": "01800000011",
+                      "type": "text",
+                      "uuid": "aa128a94-d14f-4737-b97b-091a5bba0117"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boys/send-otp",
+                  "host": [
+                    "{{auth_api}}delivery-boys"
+                  ],
+                  "path": [
+                    "send-otp"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Apr 2026 06:38:55 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "1"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "0"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"OTP sent successfully\",\n    \"data\": []\n}"
+            },
+            {
+              "name": "Too Many Attempts",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "phone",
+                      "value": "01800000011",
+                      "type": "text",
+                      "uuid": "aa128a94-d14f-4737-b97b-091a5bba0117"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boys/send-otp",
+                  "host": [
+                    "{{auth_api}}delivery-boys"
+                  ],
+                  "path": [
+                    "send-otp"
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "1"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "0"
+                },
+                {
+                  "key": "Retry-After",
+                  "value": "212"
+                },
+                {
+                  "key": "X-RateLimit-Reset",
+                  "value": "1775717035"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Apr 2026 06:40:23 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Too Many Attempts.\",\n    \"exception\": \"Illuminate\\\\Http\\\\Exceptions\\\\ThrottleRequestsException\",\n    \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n    \"line\": 254,\n    \"trace\": [\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 158,\n            \"function\": \"buildException\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 93,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\sanctum\\\\src\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful.php\",\n            \"line\": 26,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\{closure}\",\n            \"class\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 137,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\sanctum\\\\src\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful.php\",\n            \"line\": 25,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 137,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 821,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 800,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 764,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 753,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 51,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 109,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\n            \"line\": 74,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 58,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\InvokeDeferredCallbacks.php\",\n            \"line\": 22,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\InvokeDeferredCallbacks\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\ValidatePathEncoding.php\",\n            \"line\": 26,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 219,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePathEncoding\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 137,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n            \"line\": 1220,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\public\\\\index.php\",\n            \"line\": 20,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"E:\\\\xampp8.2\\\\htdocs\\\\auth-manager-api\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\resources\\\\server.php\",\n            \"line\": 23,\n            \"function\": \"require_once\"\n        }\n    ]\n}"
+            },
+            {
+              "name": "invalid number",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "phone",
+                      "value": "01800000010",
+                      "type": "text",
+                      "uuid": "aa128a94-d14f-4737-b97b-091a5bba0117"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boys/send-otp",
+                  "host": [
+                    "{{auth_api}}delivery-boys"
+                  ],
+                  "path": [
+                    "send-otp"
+                  ]
+                }
+              },
+              "status": "Unprocessable Content",
+              "code": 422,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Apr 2026 06:44:02 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "1"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "0"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"The selected phone is invalid.\",\n    \"errors\": {\n        \"phone\": [\n            \"The selected phone is invalid.\"\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "reset password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "phone",
+                  "value": "01800000011",
+                  "type": "text",
+                  "uuid": "aa128a94-d14f-4737-b97b-091a5bba0117"
+                },
+                {
+                  "key": "otp",
+                  "value": "578482",
+                  "type": "text",
+                  "uuid": "cc195948-e985-4411-9020-edba72d4483b"
+                },
+                {
+                  "key": "new_password",
+                  "value": "123456789",
+                  "type": "text",
+                  "uuid": "b681b909-1156-4c07-8dea-32290155aec8"
+                },
+                {
+                  "key": "new_password_confirmation",
+                  "value": "123456789",
+                  "type": "text",
+                  "uuid": "90dac81f-f798-4752-b896-262d276b77ba"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{auth_api}}sellers/reset-password",
+              "host": [
+                "{{auth_api}}sellers"
+              ],
+              "path": [
+                "reset-password"
+              ]
+            },
+            "description": "## Purpose\n\nAuthenticate a **Super Admin** user and return an access token for authorized requests."
+          },
+          "response": [
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "phone",
+                      "value": "01800000011",
+                      "type": "text",
+                      "uuid": "aa128a94-d14f-4737-b97b-091a5bba0117"
+                    },
+                    {
+                      "key": "otp",
+                      "value": "578482",
+                      "type": "text",
+                      "uuid": "cc195948-e985-4411-9020-edba72d4483b"
+                    },
+                    {
+                      "key": "new_password",
+                      "value": "123456789",
+                      "type": "text",
+                      "uuid": "b681b909-1156-4c07-8dea-32290155aec8"
+                    },
+                    {
+                      "key": "new_password_confirmation",
+                      "value": "123456789",
+                      "type": "text",
+                      "uuid": "90dac81f-f798-4752-b896-262d276b77ba"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boys/reset-password",
+                  "host": [
+                    "{{auth_api}}delivery-boys"
+                  ],
+                  "path": [
+                    "reset-password"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Apr 2026 06:39:31 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Password reset successfully\",\n    \"data\": []\n}"
+            },
+            {
+              "name": "error",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "phone",
+                      "value": "01800000011",
+                      "type": "text",
+                      "uuid": "aa128a94-d14f-4737-b97b-091a5bba0117"
+                    },
+                    {
+                      "key": "otp",
+                      "value": "578482",
+                      "type": "text",
+                      "uuid": "cc195948-e985-4411-9020-edba72d4483b"
+                    },
+                    {
+                      "key": "new_password",
+                      "value": "123456789",
+                      "type": "text",
+                      "uuid": "b681b909-1156-4c07-8dea-32290155aec8"
+                    },
+                    {
+                      "key": "new_password_confirmation",
+                      "value": "123456789",
+                      "type": "text",
+                      "uuid": "90dac81f-f798-4752-b896-262d276b77ba"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{auth_api}}delivery-boys/reset-password",
+                  "host": [
+                    "{{auth_api}}delivery-boys"
+                  ],
+                  "path": [
+                    "reset-password"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8001"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Apr 2026 06:40:03 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "http://127.0.0.1:5501"
+                },
+                {
+                  "key": "Access-Control-Allow-Credentials",
+                  "value": "true"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": false,\n    \"message\": \"OTP expired or not found\",\n    \"data\": null\n}"
+            }
+          ]
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "4|FtwZZ58CvWgh8t58LtFHC6PkeGUlUAk4yPxfE1rdbe0fac14",
             "type": "string"
           }
         ]

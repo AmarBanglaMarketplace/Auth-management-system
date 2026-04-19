@@ -9,14 +9,10 @@ use Spatie\Permission\Traits\HasRoles;
 
 class Agent extends Authenticatable
 {
-     use HasApiTokens, HasRoles, Notifiable;
-      protected $guard_name = 'agent';
+    use HasApiTokens, HasRoles, Notifiable;
+    protected $guard_name = 'agent';
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = ['id'];
 
     protected $hidden = [
         'password',

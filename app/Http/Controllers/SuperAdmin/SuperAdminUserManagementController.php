@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Agent;
 use App\Models\Customer;
 use App\Models\DeliveryBoy;
+use App\Models\Seller;
 use App\Models\ShopAdmin;
 use Exception;
 use Illuminate\Http\Request;
@@ -85,6 +86,30 @@ class SuperAdminUserManagementController extends Controller
             $user->save();
 
             return ApiResponse::success('Delivery Boy password updated successfully', 200);
+        } catch (Exception $e) {
+            return ApiResponse::error('Failed to update password: ' . $e->getMessage(), 500);
+        }
+    }
+    /**
+     * Update a Seller's password by Super Admin.
+     *
+     * Ensures the new password meets requirements and saves securely.
+     *
+     * @param Request $request
+     * @param Seller $user
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function updateSellerPassword(Request $request, Seller $user)
+    {
+        $request->validate([
+            'new_password' => 'required|min:8|confirmed',
+        ]);
+        try {
+
+            $user->password = Hash::make($request->new_password);
+            $user->save();
+
+            return ApiResponse::success('Seller password updated successfully', 200);
         } catch (Exception $e) {
             return ApiResponse::error('Failed to update password: ' . $e->getMessage(), 500);
         }

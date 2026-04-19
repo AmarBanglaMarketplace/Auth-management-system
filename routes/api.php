@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\Auth\AgentAuthenticationController;
 use App\Http\Controllers\Api\Auth\CustomerAuthenticationController;
 use App\Http\Controllers\Api\Auth\DeliveryBoyAuthenticationController;
+use App\Http\Controllers\Api\Auth\SellerAuthenticationController;
 use App\Http\Controllers\Api\Auth\ShopAdminAuthenticationController;
 use App\Http\Controllers\Api\Auth\SuperAdminAuthenticationController;
 use App\Http\Controllers\Api\SuperAdmin\RolePermissionController;
@@ -42,6 +43,7 @@ Route::prefix('admins')->controller(SuperAdminAuthenticationController::class)->
         Route::post('shop-admin/{user}/update-password', 'updateShopAdminPassword');
         Route::post('agent/{user}/update-password', 'updateAgentPassword');
         Route::post('delivery-boy/{user}/update-password', 'updateDeliveryBoyPassword');
+        Route::post('seller/{user}/update-password', 'updateSellerPassword');
         Route::post('customer/{user}/update-password', 'updateCustomerPassword');
     });
 });
@@ -62,6 +64,13 @@ Route::prefix('agents')->controller(AgentAuthenticationController::class)->group
     Route::post('validate-token', 'validateToken');
     Route::post('logout', 'logout')->middleware('auth:agent');
     Route::post('update-password', 'updatePassword')->middleware('auth:agent');
+});
+Route::prefix('sellers')->controller(SellerAuthenticationController::class)->group(function () {
+    Route::post('register', 'register')->middleware(['multi-auth:shop-admin']); //create shop admin
+    Route::post('login', 'login');
+    Route::post('validate-token', 'validateToken');
+    Route::post('logout', 'logout')->middleware('auth:seller');
+    Route::post('update-password', 'updatePassword')->middleware('auth:seller');
 });
 
 // Delivery Boy

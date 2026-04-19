@@ -11,11 +11,8 @@ class ShopAdmin extends Authenticatable
 {
     use HasApiTokens, HasRoles, Notifiable;
     protected $guard_name = 'shop-admin';
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = ['id'];
+
 
     protected $hidden = [
         'password',

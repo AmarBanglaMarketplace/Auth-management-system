@@ -66,6 +66,10 @@ return [
             'driver' => 'sanctum',
             'provider' => 'customers',
         ],
+        'seller' => [
+            'driver' => 'sanctum',
+            'provider' => 'seller',
+        ],
     ],
 
     /*
@@ -103,6 +107,10 @@ return [
         'delivery_boys' => [
             'driver' => 'eloquent',
             'model' => App\Models\DeliveryBoy::class,
+        ],
+        'seller' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Seller::class,
         ],
         'customers' => [
             'driver' => 'eloquent',
